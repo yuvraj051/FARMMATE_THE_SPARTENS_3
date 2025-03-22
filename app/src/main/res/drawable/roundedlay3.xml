@@ -1,0 +1,14 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Rectangle shape for the bottom part -->
+
+
+    <!-- Rounded rectangle shape for the top part (adjust radius as needed) -->
+    <item android:top="20dp"> <!-- Adjust top inset to control the height of the rounded part -->
+        <shape android:shape="rectangle">
+            <corners android:topLeftRadius="40dp" android:topRightRadius="40dp" /> <!-- Adjust radius as per your preference -->
+            <solid android:color="#FF934D" /> <!-- Background color -->
+        </shape>
+    </item>
+
+</layer-list>
