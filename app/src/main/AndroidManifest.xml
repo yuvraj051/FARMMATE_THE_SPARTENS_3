@@ -20,6 +20,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".fetch_product_farmer"
+            android:exported="false" />
+        <activity
             android:name=".fetch_product"
             android:exported="false" />
         <activity

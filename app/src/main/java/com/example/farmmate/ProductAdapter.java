@@ -62,6 +62,12 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
     public int getItemCount() {
         return productList.size();
     }
+    public void updateList(List<Product> newList) {
+        //productList.clear();
+        productList.addAll(newList);
+        notifyDataSetChanged();
+    }
+
 
     // ViewHolder class
     public static class ViewHolder extends RecyclerView.ViewHolder {

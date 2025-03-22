@@ -30,7 +30,7 @@ public class FarmerActivity extends AppCompatActivity {
 //        cardReminder = findViewById(R.id.cardReminder);
 //        cardNews = findViewById(R.id.cardNews);
 //        cardPrice = findViewById(R.id.cardPrice);
-//        cardCrop = findViewById(R.id.cardCrop);
+        cardCrop = findViewById(R.id.cardCrop);
         cardHealth = findViewById(R.id.cardHealth);
 //
 //        cardHelp = findViewById(R.id.cardHelp);
@@ -62,14 +62,15 @@ public class FarmerActivity extends AppCompatActivity {
             }
         });
 
-//        cardCrop.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent i = new Intent(FarmerActivity.this,CropDetailMain.class);
-//                startActivity(i);
-//            }
-//        });
-//
+        cardCrop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(FarmerActivity.this,fetch_product_farmer.class);
+                i.putExtra("mobile_number", mobileNumber);
+                startActivity(i);
+            }
+        });
+
 
 //        cardPrice.setOnClickListener(new View.OnClickListener() {
 //            @Override
