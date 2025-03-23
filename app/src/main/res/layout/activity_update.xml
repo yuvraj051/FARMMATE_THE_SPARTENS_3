@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="#E8F5E9"
+        android:gravity="center_vertical">
+
+        <!-- Search Section -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilSearchMobileNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Search by Mobile Number"
+            app:boxStrokeColor="#4CAF50"> <!-- Medium green stroke color -->
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etSearchMobileNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Search Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            android:backgroundTint="#4CAF50"
+            android:textColor="@android:color/white"
+            app:cornerRadius="8dp" />
+
+        <!-- Product Spinner -->
+        <Spinner
+            android:id="@+id/spProducts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#4CAF50" />
+
+        <!-- Update Stock Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Update Stock"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:textColor="#1B5E20" /> <!-- Dark green text -->
+
+        <!-- Stock Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilStock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Stock"
+            app:boxStrokeColor="#4CAF50"> <!-- Medium green stroke color -->
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etStock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Update Stock Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Update Stock"
+            android:backgroundTint="#4CAF50"
+            android:textColor="@android:color/white"
+            app:cornerRadius="8dp" />
+
+        <!-- Delete Product Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDelete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Delete Product"
+            android:backgroundTint="#D32F2F"
+            android:textColor="@android:color/white"
+            app:cornerRadius="8dp" />
+    </LinearLayout>
+</ScrollView>

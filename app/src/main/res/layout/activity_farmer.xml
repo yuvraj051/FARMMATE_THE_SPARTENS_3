@@ -140,13 +140,13 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_gravity="center_horizontal"
-                        android:src="@drawable/stocks" />
+                        android:src="@drawable/user" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="Prices"
+                        android:text="Profile"
                         android:textColor="@color/black"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -173,13 +173,13 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_gravity="center_horizontal"
-                        android:src="@drawable/hospital" />
+                        android:src="@drawable/basket" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="Health"
+                        android:text="Add Crops"
                         android:textColor="@color/black"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -187,71 +187,9 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardNews"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_margin="12dp"
-                app:cardBackgroundColor="#fff"
-                app:cardCornerRadius="11dp"
-                app:cardElevation="11dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:layout_gravity="center_horizontal"
-                        android:src="@drawable/paper" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="News"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardScheme"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_margin="12dp"
-                app:cardBackgroundColor="#fff"
-                app:cardCornerRadius="11dp"
-                app:cardElevation="11dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:layout_gravity="center_horizontal"
-                        android:src="@drawable/grant" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="Scheme"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardCrop"
@@ -278,7 +216,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="Crops"
+                        android:text="My Crops"
                         android:textColor="@color/black"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -312,6 +250,39 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="Help"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardNews"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="12dp"
+                app:cardBackgroundColor="#fff"
+                app:cardCornerRadius="11dp"
+                app:cardElevation="11dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/update" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Update"
                         android:textColor="@color/black"
                         android:textSize="18sp"
                         android:textStyle="bold" />

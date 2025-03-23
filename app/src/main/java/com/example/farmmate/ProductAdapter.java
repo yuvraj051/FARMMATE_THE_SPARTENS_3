@@ -1,10 +1,12 @@
 package com.example.farmmate;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -50,6 +52,11 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
             holder.productStock.setTextColor(Color.RED); // Set text color to red
         }
 
+        holder.view.setOnClickListener(v -> {
+            Intent intent = new Intent(context, qr_code.class);
+            context.startActivity(intent);
+        });
+
         // Load product image using Glide
         Glide.with(context)
                 .load(product.getImageUrl())
@@ -72,6 +79,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
     // ViewHolder class
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView productName, productDetails, productPrice, productVillages, productStock;
+
+        Button view;
         ImageView productImage;
 
         public ViewHolder(@NonNull View itemView) {
@@ -83,6 +92,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
             productPrice = itemView.findViewById(R.id.productPrice);
             productVillages = itemView.findViewById(R.id.productVillages);
             productStock = itemView.findViewById(R.id.productStock);
+            view = itemView.findViewById(R.id.viewDetailsButton);
             productImage = itemView.findViewById(R.id.productImage);
         }
     }

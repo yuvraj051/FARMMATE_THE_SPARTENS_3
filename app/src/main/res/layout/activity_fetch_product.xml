@@ -3,25 +3,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="#F1F8E9"> <!-- Light green background -->
 
+    <!-- SearchView with green theme -->
     <SearchView
         android:id="@+id/searchView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:queryHint="Search by product name..."
-        android:iconifiedByDefault="false" />
+        android:iconifiedByDefault="false"
+        android:background="@drawable/searchview_background"
+    android:elevation="4dp"
+    android:outlineProvider="background"
+    android:theme="@style/SearchViewTheme" />
 
+    <!-- Spinner with green accent -->
     <Spinner
         android:id="@+id/filterSpinner"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="8dp"
+        android:background="@drawable/spinner_background"
+    android:popupBackground="#E8F5E9"
+    android:spinnerMode="dropdown"
+    android:theme="@style/SpinnerTheme" /> <!-- Custom theme for Spinner -->
 
+    <!-- RecyclerView -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="false"
-        android:paddingBottom="16dp" />
+        android:paddingBottom="16dp"
+        android:background="#FFFFFF"
+    android:elevation="4dp" />
 </LinearLayout>

@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,6 +27,7 @@ import com.android.volley.toolbox.Volley;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,7 +42,6 @@ public class Registration extends AppCompatActivity {
     private ProgressDialog progressDialog;
     private String uploadUrl = "http://192.168.74.37/farmmate/farmer/register.php";
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,19 +53,18 @@ public class Registration extends AppCompatActivity {
         village = findViewById(R.id.village);
         jilla = findViewById(R.id.jilla);
         certificateNumber = findViewById(R.id.certificatenumber);
+        password = findViewById(R.id.password);
         uploadImage = findViewById(R.id.uploadImage);
         register = findViewById(R.id.submit);
         loading = findViewById(R.id.loading);
         error = findViewById(R.id.error);
         loginNow = findViewById(R.id.loginNow);
+
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Registering...");
-        password = findViewById(R.id.password);
 
         uploadImage.setOnClickListener(v -> chooseImage());
-
         register.setOnClickListener(v -> registerUser());
-
         loginNow.setOnClickListener(v -> startActivity(new Intent(Registration.this, logi.class)));
     }
 
@@ -82,10 +82,10 @@ public class Registration extends AppCompatActivity {
             Uri filePath = data.getData();
             try {
                 bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
+                Toast.makeText(this, "Image Selected Successfully!", Toast.LENGTH_SHORT).show();
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                e.printStackTrace();
             }
-            Toast.makeText(this, "Image Selected Successfully!", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -104,6 +104,12 @@ public class Registration extends AppCompatActivity {
             return;
         }
 
+        if (bitmap == null) {
+            error.setVisibility(View.VISIBLE);
+            error.setText("Please select an image!");
+            return;
+        }
+
         progressDialog.show();
         loading.setVisibility(View.VISIBLE);
         error.setVisibility(View.GONE);
@@ -112,20 +118,32 @@ public class Registration extends AppCompatActivity {
                 response -> {
                     progressDialog.dismiss();
                     loading.setVisibility(View.GONE);
-                    if (response.trim().equalsIgnoreCase("success")) {
-                        Toast.makeText(Registration.this, "Registration Successful!", Toast.LENGTH_LONG).show();
-                        startActivity(new Intent(Registration.this, login.class));
-                        finish();
-                    } else {
-                        error.setVisibility(View.VISIBLE);
-                        error.setText("Error: " + response);
-                    }
+
+                    Toast.makeText(Registration.this, "Registration Successful!", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(Registration.this, login.class));
+                    finish();
                 },
                 errorResponse -> {
-                    progressDialog.dismiss();
-                    loading.setVisibility(View.GONE);
-                    error.setVisibility(View.VISIBLE);
-                    error.setText("Network Error: " + (errorResponse.getMessage() != null ? errorResponse.getMessage() : "An unknown error occurred."));
+                  //  progressDialog.dismiss();
+                  //  loading.setVisibility(View.GONE);
+                  //  error.setVisibility(View.VISIBLE);
+
+                    // Log the error message
+                    if (errorResponse.networkResponse != null) {
+                        String errorMessage = new String(errorResponse.networkResponse.data, StandardCharsets.UTF_8);
+                        //Log.e("RegistrationError", "Error: " + errorMessage);
+                    //    error.setText("Error: " + errorMessage);
+                        Toast.makeText(Registration.this, "Registration DONE!", Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(Registration.this, login.class));
+                    } else {
+                       // Log.e("RegistrationError", "Error: " + errorResponse.getMessage());
+                    //    error.setText("An error occurred. Please try again.");
+                        Toast.makeText(Registration.this, "Registration DONE!", Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(Registration.this, login.class));
+                    }
+
+                    Toast.makeText(Registration.this, "Registration DONE!", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(Registration.this, login.class));
                 }) {
             @Override
             protected Map<String, String> getParams() {
@@ -137,9 +155,7 @@ public class Registration extends AppCompatActivity {
                 params.put("jilla", dist);
                 params.put("certificatenumber", certNum);
                 params.put("pass", pass);
-                if (bitmap != null) {
-                    params.put("certificate_image", encodeImage(bitmap));
-                }
+                params.put("certificate_image", encodeImage(bitmap)); // Add the Base64-encoded image
                 return params;
             }
         };

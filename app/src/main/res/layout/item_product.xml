@@ -6,7 +6,7 @@
     android:layout_margin="16dp"
     android:elevation="8dp"
     app:cardCornerRadius="12dp"
-    app:cardBackgroundColor="#B4C4E9">
+    app:cardBackgroundColor="#E8F5E9"> <!-- Light green background -->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -33,7 +33,7 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_marginTop="8dp"
-            android:textColor="@color/black" />
+            android:textColor="#1B5E20" /> <!-- Dark green text -->
 
         <!-- Product Details -->
         <TextView
@@ -43,7 +43,7 @@
             android:text="Product Details"
             android:textSize="14sp"
             android:layout_marginTop="4dp"
-            android:textColor="#402C2C" />
+            android:textColor="#4CAF50" /> <!-- Medium green text -->
 
         <!-- Product Price -->
         <TextView
@@ -52,8 +52,8 @@
             android:layout_height="wrap_content"
             android:text="Price"
             android:textSize="16sp"
-            android:textColor="@color/green"
-            android:layout_marginTop="4dp" />
+            android:textColor="#388E3C"
+        android:layout_marginTop="4dp" />
 
         <!-- Available in Villages -->
         <TextView
@@ -63,7 +63,7 @@
             android:text="Available in Villages"
             android:textSize="14sp"
             android:layout_marginTop="4dp"
-            android:textColor="#0827D7" />
+            android:textColor="#2E7D32" /> <!-- Dark green text -->
 
         <!-- Stock Status -->
         <TextView
@@ -73,7 +73,7 @@
             android:text="Stock Status"
             android:textSize="14sp"
             android:layout_marginTop="4dp"
-            android:textColor="@color/black" />
+            android:textColor="#1B5E20" /> <!-- Dark green text -->
 
         <!-- Buttons Layout -->
         <LinearLayout
@@ -89,13 +89,13 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Add to Cart"
-                android:backgroundTint="@color/green"
-                android:textColor="@android:color/white"
-                android:layout_marginEnd="4dp"
-                app:cornerRadius="8dp"
-                app:icon="@drawable/ic_cart"
-                app:iconTint="@android:color/white"
-                app:iconGravity="textStart" />
+                android:backgroundTint="#4CAF50"
+            android:textColor="@android:color/white"
+            android:layout_marginEnd="4dp"
+            app:cornerRadius="8dp"
+            app:icon="@drawable/ic_cart"
+            app:iconTint="@android:color/white"
+            app:iconGravity="textStart" />
 
             <!-- View Details Button -->
             <com.google.android.material.button.MaterialButton
@@ -103,14 +103,14 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="View "
-                android:backgroundTint="@color/red"
-                android:textColor="@android:color/white"
-                android:layout_marginStart="4dp"
-                app:cornerRadius="8dp"
-                app:icon="@drawable/ic_detail"
-                app:iconTint="@android:color/white"
-                app:iconGravity="textStart" />
+                android:text="View Details"
+                android:backgroundTint="#81C784"
+            android:textColor="@android:color/white"
+            android:layout_marginStart="4dp"
+            app:cornerRadius="8dp"
+            app:icon="@drawable/ic_detail"
+            app:iconTint="@android:color/white"
+            app:iconGravity="textStart" />
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

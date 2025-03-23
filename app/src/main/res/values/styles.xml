@@ -9,4 +9,12 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">8dp</item>
     </style>
+
+    <style name="SearchViewTheme"></style>
+
+    <style name="SpinnerTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="colorControlNormal">#4CAF50</item> <!-- Green arrow color -->
+        <item name="colorControlActivated">#388E3C</item> <!-- Green activated color -->
+        <item name="android:textColor">#1B5E20</item> <!-- Dark green text -->
+    </style>
 </resources>

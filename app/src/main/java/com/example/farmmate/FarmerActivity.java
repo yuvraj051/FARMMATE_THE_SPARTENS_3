@@ -14,6 +14,7 @@ public class FarmerActivity extends AppCompatActivity {
     Button btnMarket;
     CardView cardWeather,cardReminder,cardNews,cardPrice,cardCrop,cardHealth,cardScheme,cardHelp;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,16 +27,16 @@ public class FarmerActivity extends AppCompatActivity {
             Toast.makeText(this, "Logged in as: " + mobileNumber, Toast.LENGTH_LONG).show();
         }
     btnMarket = findViewById(R.id.btnMarket);
-//        cardWeather = findViewById(R.id.cardWeather);
-//        cardReminder = findViewById(R.id.cardReminder);
-//        cardNews = findViewById(R.id.cardNews);
-//        cardPrice = findViewById(R.id.cardPrice);
-        cardCrop = findViewById(R.id.cardCrop);
+    cardWeather = findViewById(R.id.cardWeather);
+    cardReminder = findViewById(R.id.cardReminder);
+        cardNews = findViewById(R.id.cardNews);
+        cardPrice = findViewById(R.id.cardPrice);
+       cardCrop = findViewById(R.id.cardCrop);
         cardHealth = findViewById(R.id.cardHealth);
 //
-//        cardHelp = findViewById(R.id.cardHelp);
+        cardHelp = findViewById(R.id.cardHelp);
 
-        cardScheme = findViewById(R.id.cardScheme);
+     //   cardScheme = findViewById(R.id.cardScheme);
 //        cardHelp.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
@@ -44,14 +45,14 @@ public class FarmerActivity extends AppCompatActivity {
 //            }
 //        });
 
-        cardScheme.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(FarmerActivity.this, logi.class);
-                i.putExtra("mobile_number", mobileNumber); // Pass the mobile number further if needed
-                startActivity(i);
-            }
-        });
+//        cardScheme.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = new Intent(FarmerActivity.this, logi.class);
+//                i.putExtra("mobile_number", mobileNumber); // Pass the mobile number further if needed
+//                startActivity(i);
+//            }
+//        });
 
         cardHealth.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +62,16 @@ public class FarmerActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        cardHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(FarmerActivity.this,about.class);
+                i.putExtra("mobile_number", mobileNumber);
+                startActivity(i);
+            }
+        });
+
 
         cardCrop.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,36 +83,37 @@ public class FarmerActivity extends AppCompatActivity {
         });
 
 
-//        cardPrice.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent i = new Intent(FarmerActivity.this,ActivityCropPrices.class);
-//                startActivity(i);
-//            }
-//        });
+        cardPrice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(FarmerActivity.this, logi.class);
+                i.putExtra("mobile_number", mobileNumber); // Pass the mobile number further if needed
+                startActivity(i);
+            }
+        });
 
-//        cardNews.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent i = new Intent(FarmerActivity.this,NewsActivity.class);
-//                startActivity(i);
-//            }
-//        });
-//        cardWeather.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent i = new Intent(FarmerActivity.this,WeatherActivity.class);
-//                startActivity(i);
-//
-//            }
-//        });
-//        cardReminder.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent i = new Intent(FarmerActivity.this,MyCustomeCalender.class);
-//                startActivity(i);
-//            }
-//        });
+        cardNews.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(FarmerActivity.this,update.class);
+                startActivity(i);
+            }
+        });
+        cardWeather.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(FarmerActivity.this,WeatherActivity1.class);
+                startActivity(i);
+
+            }
+        });
+        cardReminder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(FarmerActivity.this,calender.class);
+                startActivity(i);
+            }
+        });
 
 
         btnMarket.setOnClickListener(new View.OnClickListener() {

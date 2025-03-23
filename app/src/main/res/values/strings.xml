@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">FARMMATE</string>
     <string name="product_image_description">Enter Your details\n</string>
+
+
+    <string name="channel_name">FarmMate</string>
+    <string name="channel_description">Your Event and Date Selected</string>
+    <string name="qr_code_image">Scan</string>
+
+
 </resources>
